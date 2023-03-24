@@ -1,0 +1,20 @@
+Install Kafka Ubuntu 
+https://www.youtube.com/watch?v=tFlYoEJsT2k
+
+Run Zookeeper & Kafka
+- zookeeper-server-start.sh config/zookeeper.properties
+- kafka-server-start.sh config/server.properties
+
+Create topic
+- kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic contoh-topic
+
+List topic
+- kafka-topics.sh --list --bootstrap-server localhost:9092
+
+Send data topic test message
+- kafka-console-producer.sh --broker-list localhost:9092 --topic contoh-topic => Hello World
+
+Consmer topic
+- kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic contoh-topic --from-beginning
+Consumer Group
+- kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic contoh-topic --group belajar --from-beginning
